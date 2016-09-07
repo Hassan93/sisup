@@ -12,10 +12,12 @@
         <hr>
         {{ Form::label('title', 'Post Title:') }}
         {{ Form::text('title', null, array('class'=>'form-control', 'required'=>'', 'maxlength'=>'6'))}}
+        {{ Form::label('slug', 'Slug:', array('class'=>'form-spacing-top')) }}
+        {{ Form::text('slug', null, array('class'=>'form-control', 'required'=>'', 'maxlength'=>'6'))}}
         {{ Form::label('body', 'Post Body:', array('class' =>'form-spacing-top')) }}
         {{ Form::textarea('body', null, array('class'=>'form-control', 'required'=>''))}}
 
-        <div class="col-sm-6" style="margin-top:20px">                   
+        <div class="col-sm-6" style="margin-top:20px">
           {!! Html::linkRoute('posts.show', 'Cancel', array($post->id), array('class' =>'btn btn-danger btn-block' ))!!}
         </div>
         <div class="col-sm-6" style="margin-top:20px">

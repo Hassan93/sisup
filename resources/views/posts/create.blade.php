@@ -12,9 +12,10 @@
              <hr>
              {!! Form::open(array('route' => 'posts.store', 'data-parsley-validate'=>'')) !!}
                 {{ Form::label('title', 'Post Title:') }}
-                {{ Form::text('title', null, array('class'=>'form-control', 'required'=>'', 'maxlength'=>'6'))}}
-
-                  {{ Form::label('body', 'Post Body:') }}
+                {{ Form::text('title', null, array('class'=>'form-control', 'required'=>'', 'maxlength'=>'100'))}}
+                {{Form::label('slug', 'Slug/Url:')}}
+                {{Form::text('slug', null, array('class'=>'form-control', 'required'=>'', 'minlength'=>'5', 'maxlength'=>'100'))}}
+                {{ Form::label('body', 'Post Body:') }}
                 {{ Form::textarea('body', null, array('class'=>'form-control', 'required'=>''))}}
 
                 {{ Form::submit('Create Post', array('class'=>'btn btn-success btn-lg btn-block', 'style'=>'margin-top:20px'))}}
